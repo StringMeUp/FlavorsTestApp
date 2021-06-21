@@ -1,3 +1,12 @@
+This is a simple representation of android flavors with "manual" pagination. 
+It has a details screed where unsurprisingly more details can be found with the 
+functionality to download an image on tap. Other features include also a search option
+and simple flavors for phone and tablet. DI was not used as it was a rather small app and I 
+wanted to leverage Kotlin Objects. Hilt would be a great option in future. 
+
+P.S. The backed randomly snaps since it was made to work that way obviously. (error handling purposes)
+This is in case you want to take a look at the ui, which isn't that bad I must say. 
+
 Response example:
 ```json
 {
