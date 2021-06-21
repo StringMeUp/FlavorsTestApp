@@ -1,0 +1,19 @@
+<resources>
+<!--    <string name="app_name" translatable="false">EQApp</string>-->
+    <string name="place_holder_text">Place Holder</string>
+    <string name="app_score">Score</string>
+    <string name="unexpected_err_title">Unexpected Error</string>
+    <string name="unexpected_err_message">The server blew up and acts like it don\'t know nobody!</string>
+    <string name="label_play_store">Play Store</string>
+    <string name="label_app_store">App Store</string>
+    <string name="download_image">Download</string>
+    <string name="download_completed">Download completed!</string>
+    <string name="download_failed">Your download failed for some reason. Please contact support!</string>
+    <string name="end_of_pagination_reached">We do not have more apps to show, please come back later!</string>
+    <string name="search_here_hint">Search here…</string>
+    <string name="label_no_rating">App not rated yet.</string>
+    <string name="label_device_android" translatable="false">Android</string>
+    <string name="label_device_ios" translatable="false">Ios</string>
+    <string name="label_app_size_unknown">Unknown App Size</string>
+    <string name="label_app_size_in_bytes" translatable="false">MB</string>
+</resources>

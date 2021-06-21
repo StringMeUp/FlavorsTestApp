@@ -1,0 +1,18 @@
+<resources>
+<!--    <string name="place_holder_text">Rezervirano mesto</string>-->
+    <string name="app_score">Rezultat</string>
+    <string name="unexpected_err_title">Nepričakovana napaka</string>
+    <string name="unexpected_err_message">Strežnik je eksplodiral in deluje, kot da ne pozna nikogar!</string>
+    <string name="label_play_store">Trgovina z igračami</string>
+    <string name="label_app_store">Trgovina z aplikacijami</string>
+    <string name="download_image">Prenesi</string>
+    <string name="download_completed">Prenos končan!</string>
+    <string name="download_failed">Prenos iz nekega razloga ni uspel. Obrnite se na podporo!</string>
+    <string name="end_of_pagination_reached">Nimamo več aplikacij za prikaz, prosimo, vrnite se kasneje!</string>
+    <string name="search_here_hint">Trazi ovdje…</string>
+    <string name="label_no_rating">Aplikacija še ni ocenjena.</string>
+    <string name="label_device_android">Android</string>
+    <string name="label_device_ios">Ios</string>
+    <string name="label_app_size_unknown">Neznana velikost aplikacije</string>
+    <string name="label_app_size_in_bytes">MB</string>
+</resources>

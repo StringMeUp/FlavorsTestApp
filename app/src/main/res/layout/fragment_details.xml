@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.string.me.up.eqandroidtestapp.details.DetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/app_image"
+            glide="@{viewmodel.itemDetailsInfo.image}"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="start"
+            android:text="@{viewmodel.itemDetailsInfo.name}"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/app_image"
+            app:layout_constraintTop_toTopOf="@+id/app_image"
+            tools:text="@string/place_holder_text" />
+
+        <RatingBar
+            android:id="@+id/rating_bar_value"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="@{viewmodel.isAndroid ? viewmodel.androidRatings : viewmodel.iosRatings}"
+            android:stepSize="0.1"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintStart_toStartOf="@+id/title_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
+
+        <TextView
+            android:id="@+id/text_view_not_rated"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/light_italic"
+            android:text="@string/label_no_rating"
+            app:layout_constraintStart_toStartOf="@id/rating_bar_value"
+            app:layout_constraintTop_toBottomOf="@id/rating_bar_value" />
+
+        <TextView
+            android:id="@+id/text_view_app_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/light_italic"
+            app:layout_constraintStart_toStartOf="@id/text_view_not_rated"
+            app:layout_constraintTop_toBottomOf="@id/text_view_not_rated"
+            tools:text="5MB" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parent_constraint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/button_download"
+            app:layout_constraintStart_toStartOf="@+id/button_download"
+            app:layout_constraintTop_toBottomOf="@id/app_image">
+
+            <ImageView
+                android:id="@+id/image_view_type"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/android_bug"
+                app:layout_constraintBottom_toTopOf="@id/text_view_type"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <TextView
+                android:id="@+id/text_view_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center"
+                android:text="@{viewmodel.type}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/image_view_type"
+                app:layout_constraintStart_toStartOf="@+id/image_view_type"
+                tools:text="@string/place_holder_text" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="1dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="34dp"
+                android:background="@color/separator"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_type"
+                app:layout_constraintStart_toEndOf="@id/text_view_type"
+                app:layout_constraintTop_toTopOf="@+id/image_view_type" />
+
+            <ImageView
+                android:id="@+id/image_view_play_store"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="34dp"
+                android:src="@drawable/play_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/view"
+                app:layout_constraintStart_toEndOf="@+id/view"
+                app:layout_constraintTop_toTopOf="@+id/view" />
+
+            <TextView
+                android:id="@+id/text_view_play_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center"
+                android:text="@string/label_play_store"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/image_view_play_store"
+                app:layout_constraintStart_toStartOf="@+id/image_view_play_store" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="1dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="34dp"
+                android:background="@color/separator"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_play_store"
+                app:layout_constraintStart_toEndOf="@+id/image_view_play_store"
+                app:layout_constraintTop_toTopOf="@+id/image_view_play_store" />
+
+            <TextView
+                android:id="@+id/text_view_scores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="34dp"
+                android:layout_marginEnd="22dp"
+                android:fontFamily="@font/roboto_light"
+                android:padding="6dp"
+                android:text="@{viewmodel.isAndroid ? viewmodel.androidScores : viewmodel.iosScores}"
+                app:layout_constraintBottom_toBottomOf="@+id/view2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/view2"
+                app:layout_constraintTop_toTopOf="@+id/view2"
+                tools:text="4.2" />
+
+            <ImageView
+                android:id="@+id/place_holder_ratings"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="1dp"
+                android:src="@drawable/rating_star"
+                app:layout_constraintBottom_toBottomOf="@+id/text_view_scores"
+                app:layout_constraintStart_toEndOf="@+id/text_view_scores"
+                app:layout_constraintTop_toTopOf="@+id/text_view_scores"
+                app:layout_goneMarginStart="2dp" />
+
+            <TextView
+                android:id="@+id/text_view_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center"
+                android:text="@string/app_score"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/text_view_scores"
+                app:layout_constraintStart_toStartOf="@+id/text_view_scores" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/bottom_border"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorPrimaryVariant"
+            app:layout_constraintEnd_toEndOf="@id/button_download"
+            app:layout_constraintStart_toStartOf="@id/button_download"
+            app:layout_constraintTop_toBottomOf="@id/parent_constraint" />
+
+        <Button
+            android:id="@+id/button_download"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/download_image"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottom_border"
+            tools:layout_editor_absoluteY="270dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
